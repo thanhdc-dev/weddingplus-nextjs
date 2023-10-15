@@ -658,9 +658,8 @@ const EventItem = ({ image, title, time, location, calendar, googleMapUrl }: Eve
 			</div>
 
 			<div className="relative group-hover/item:h-max group-hover/item:opacity-100 group-hover/item:top-0 flex justify-center items-center flex-col sm:flex-row">
-				<div className="calendar-button overflow-hidden"></div>
 				<span
-					className={`${marmeladFont.className} text-wed003-primary hover:text-wed003-primary group/button relative mx-3 border border-wed003-primary w-[205px] text-center text-sm hover:border-transparent`}
+					className={`${marmeladFont.className} text-wed003-primary hover:text-wed003-primary group/button relative mx-3 border border-wed003-primary w-[205px] text-center text-sm hover:border-transparent mb-2 sm:mb-0`}
 				>
 					<div className="border-t border-b border-t-wed003-primary border-b-wed003-primary absolute top-0 -left-[10px] -right-[10px] h-full transition-all duration-700 scale-x-0 group-hover/button:scale-x-100 before:border-t before:border-b before:border-t-wed003-primary before:border-b-wed003-primary before:absolute before:-top-[10px] before:left-[10px] before:right-[10px] before:-bottom-[10px] before:transition-all before:duration-700 before:scale-x-0 before:group-hover/button:scale-x-100"></div>
 					<div className="border-l border-r border-l-wed003-primary border-r-wed003-primary absolute -top-[10px] -bottom-[10px] left-0 w-full transition-all duration-700 scale-y-0 group-hover/button:scale-y-100 before:border-l before:border-r before:border-l-wed003-primary before:border-r-wed003-primary before:absolute before:top-[10px] before:bottom-[10px] before:-left-[10px] before:-right-[10px] before:transition-all before:duration-700 before:scale-y-0 before:group-hover/button:scale-y-100"></div>
