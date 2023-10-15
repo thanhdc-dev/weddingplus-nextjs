@@ -511,7 +511,7 @@ const Event = ({ imageBg, itemImageBg, items }: EventProps) => {
 				className="relative text-center py-12 px-5 mb-7 mx-2 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1rem)] p-5"
 				style={{ backgroundImage: `url(${itemImageBg.src})` }}
 			>
-				<h3 className="font-comfortaa font-medium text-lg pb-4 mb-6 relative before:absolute before:bg-wed002-primary before:h-[2px] before:w-[120px] before:left-1/2 before:bottom-0 before:-translate-x-1/2">
+				<h3 className={`${comfortaaFont.className} font-medium text-lg pb-4 mb-6 relative before:absolute before:bg-wed002-primary before:h-[2px] before:w-[120px] before:left-1/2 before:bottom-0 before:-translate-x-1/2`}>
 					{item.title}
 				</h3>
 				<div className="mb-5">
@@ -531,7 +531,7 @@ const Event = ({ imageBg, itemImageBg, items }: EventProps) => {
 					></AddToCalendarButton>
 				</div>
 				<Link
-					className="w-full font-bold text-gray-400 rounded-[60px] py-2 border-[2px] border-wed002-primary"
+					className="w-full font-bold bg-[#f5f5f5] rounded-[60px] py-2 border-[2px] border-wed002-primary"
 					href={item.googleMapUrl}
 					target="_blank"
 				>
