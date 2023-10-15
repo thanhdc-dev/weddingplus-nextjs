@@ -1,9 +1,10 @@
+import GoogleTagManager from '@/components/SEO/GoogleTagManager';
+import { openGraph, twitter } from '@/components/SEO/shared-metadata';
+import Navbar from '@/components/navbar/navbar';
 import config from '@/libs/config';
-import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Navbar from '@/components/navbar/navbar';
-import { openGraph, twitter } from '@/components/SEO/shared-metadata';
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -47,6 +48,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="vi">
+			{process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && <GoogleTagManager googleTagManagerId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />}
 			<body className={`${inter.className} bg-white`}>
 				<Navbar />
 				{children}
