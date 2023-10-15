@@ -38,7 +38,7 @@ import Link from 'next/link';
 import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 import React, { createElement } from 'react';
-import { TfiFacebook, TfiInstagram, TfiLinkedin, TfiTwitterAlt } from 'react-icons/tfi';
+import { TfiFacebook, TfiInstagram, TfiLinkedin, TfiTwitterAlt, TfiControlPlay } from 'react-icons/tfi';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import styles from './styles.module.scss';
 const OwlCarousel = dynamic(() => import('react-owl-carousel'), { ssr: false });
@@ -413,11 +413,11 @@ const Video = ({ videoUrl, imageBg }: VideoProps) => {
 				</p>
 				<div className="relative video-btn w-20 h-20 block mx-auto">
 					<Link
-						className="cursor-pointer w-full h-full text-3xl text-white leading-[75px] border-4 rounded-full border-wed002-primary bg-[#c89d9c4d]"
+						className="flex items-center justify-center cursor-pointer w-full h-full text-3xl text-white leading-[75px] border-4 rounded-full border-wed002-primary bg-[#c89d9c4d]"
 						href={videoUrl}
 						data-type="iframe"
 					>
-						<i className="ti-control-play"></i>
+						<TfiControlPlay/>
 					</Link>
 				</div>
 			</div>
