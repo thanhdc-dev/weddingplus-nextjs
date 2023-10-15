@@ -1,0 +1,37 @@
+.loadingHeart {
+	stroke: #747ba9;
+	fill: transparent;
+	stroke-width: 11;
+	path {
+		stroke-dashoffset: 0;
+		stroke-dasharray: 1550;
+		transform-origin: center;
+	}
+}
+
+.footerImage {
+	&::after,
+	&::before {
+		content: '';
+		width: 100px;
+		height: 87px;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%) rotate(50deg);
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-image: url(/images/wed-003/flower-small.svg);
+		background-size: contain;
+		-khtml-opacity: 0.5;
+		-moz-opacity: 0.5;
+		opacity: 0.5;
+	}
+
+	&::before {
+		right: -12px;
+	}
+	&::after {
+		left: -12px;
+		transform: translateY(-50%) rotate(-130deg);
+	}
+}
