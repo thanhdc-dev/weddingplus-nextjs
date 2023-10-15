@@ -40,6 +40,7 @@ import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 import React, { createElement } from 'react';
 import { TfiFacebook, TfiInstagram, TfiLinkedin, TfiTwitterAlt } from 'react-icons/tfi';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+import styles from './styles.module.scss';
 const OwlCarousel = dynamic(() => import('react-owl-carousel'), { ssr: false });
 
 const comfortaaFont = Comfortaa({
@@ -157,7 +158,7 @@ const Invitation = ({ weddingDate, invitationBgImage }: InvitationProps) => {
 		}
 	};
 
-	const generateCalendar = () => {
+	const TableCallendar = ({ weddingDate }: { weddingDate: Date }) => {
 		const year = weddingDate.getFullYear();
 		const month = weddingDate.getMonth() + 1;
 		const firstDayOfMonth = new Date(year, month - 1, 1);
@@ -271,22 +272,22 @@ const Invitation = ({ weddingDate, invitationBgImage }: InvitationProps) => {
 						</div>
 					</div>
 					<div className="p-4 w-full lg:w-1/2">
-						<div className="invitation-box m-auto bg-white max-w-[580px] p-12 xs:py-20 xs:px-16 lg:py-32 text-center relative before:absolute before:right-[15px] lg:before:right-[50px] before:bottom-[15px] lg:before:bottom-[50px] before:left-[15px] lg:before:left-[50px] before:top-[15px] lg:before:top-[50px] before:border-[5px] before:border-wed002-primary">
+						<div className="invitation-box m-auto bg-white max-w-[580px] p-8 sm:py-20 sm:px-16 lg:py-32 text-center relative before:absolute before:right-[15px] lg:before:right-[50px] before:bottom-[15px] lg:before:bottom-[50px] before:left-[15px] lg:before:left-[50px] before:top-[15px] lg:before:top-[50px] before:border-[5px] before:border-wed002-primary">
 							<div className="inner relative">
-								<div className="mini_calendar" id="calendar">
-									{generateCalendar()}
+								<div className={`${styles.miniCalendar}`} id="calendar">
+									{<TableCallendar weddingDate={weddingDate} />}
 								</div>
 							</div>
 							<div className="count-down-clock">
 								<div id="clock" className="flex">
 									<div className="box w-1/4 mt-7 mx-4 text-wed002-primary">
-										<div id="days" className={`${greatVibesFont.className} text-6xl font-medium`}>
+										<div id="days" className={`${greatVibesFont.className} text-4xl xs:5xl sm:text-6xl font-medium`}>
 											{days}
 										</div>
 										<span>Ngày</span>
 									</div>
 									<div className="box w-1/4 mt-7 mx-4 text-wed002-primary">
-										<div id="hours" className={`${greatVibesFont.className} text-6xl font-medium`}>
+										<div id="hours" className={`${greatVibesFont.className} text-4xl xs:5xl sm:text-6xl font-medium`}>
 											{hours}
 										</div>
 										<span>Giờ</span>
@@ -294,7 +295,7 @@ const Invitation = ({ weddingDate, invitationBgImage }: InvitationProps) => {
 									<div className="box w-1/4 mt-7 mx-4 text-wed002-primary">
 										<div
 											id="minutes"
-											className={`${greatVibesFont.className} text-6xl font-medium`}
+											className={`${greatVibesFont.className} text-4xl xs:5xl sm:text-6xl font-medium`}
 										>
 											{minutes}
 										</div>
@@ -303,7 +304,7 @@ const Invitation = ({ weddingDate, invitationBgImage }: InvitationProps) => {
 									<div className="box w-1/4 mt-7 mx-4 text-wed002-primary">
 										<div
 											id="seconds"
-											className={`${greatVibesFont.className} text-6xl font-medium`}
+											className={`${greatVibesFont.className} text-4xl xs:5xl sm:text-6xl font-medium`}
 										>
 											{seconds}
 										</div>
@@ -522,7 +523,12 @@ const Event = ({ imageBg, itemImageBg, items }: EventProps) => {
 				<p>{item.location}</p>
 
 				<div className="calendar-button">
-					<AddToCalendarButton {...item.calendar} inline buttonStyle='round' styleLight='--btn-border: #c89d9c;--btn-shadow: none;--btn-shadow-hover: none;--btn-shadow-active: none;'></AddToCalendarButton>
+					<AddToCalendarButton
+						{...item.calendar}
+						inline
+						buttonStyle="round"
+						styleLight="--btn-border: #c89d9c;--btn-shadow: none;--btn-shadow-hover: none;--btn-shadow-active: none;"
+					></AddToCalendarButton>
 				</div>
 				<Link
 					className="w-full font-bold text-gray-400 rounded-[60px] py-2 border-[2px] border-wed002-primary"
