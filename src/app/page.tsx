@@ -558,7 +558,7 @@ export default function Home() {
 		items: [
 			{
 				name: 'Cơ Bản',
-				price: '1.190.000 VNĐ',
+				price: '---',
 				description:
 					'Gói hoàn hảo để chia sẻ và lan tỏa những điều hạnh phúc của bạn đến mọi người.',
 				features: [
@@ -573,15 +573,15 @@ export default function Home() {
 		services: [
 			{
 				name: 'Cài đặt tên miền tùy chỉnh. (Hỗ trợ, hướng dẫn mua tên miền miễn phí).',
-				price: '100.000 VNĐ / lần',
+				price: '--- VNĐ / lần',
 			},
 			{
 				name: 'Gia hạn thời gian sử dụng.',
-				price: '100.000 VNĐ / tháng',
+				price: '--- VNĐ / tháng',
 			},
 			{
 				name: 'Tăng dung lượng lưu trữ hình ảnh, video.',
-				price: '100.000 VNĐ / 50 hình ảnh',
+				price: '--- VNĐ / 50 hình ảnh',
 			},
 		],
 	};
