@@ -45,7 +45,7 @@ export default function Page() {
 	};
 	const bride = {
 		name: 'Như Ý',
-		full_name: 'Như Ý',
+		full_name: 'Nguyễn Hoàng Như Ý',
 	};
 	const headerData: HeaderProps = {
 		weddingDate,
@@ -58,8 +58,7 @@ export default function Page() {
 		groom: {
 			name: 'Anh Khiêm',
 			avatar: GroomImage,
-			description:
-				'',
+			description: '',
 			socials: [
 				{
 					icon: 'ti-instagram',
@@ -78,8 +77,7 @@ export default function Page() {
 		bride: {
 			name: 'Như Ý',
 			avatar: BrideImage,
-			description:
-				'',
+			description: '',
 			socials: [
 				{
 					icon: 'ti-instagram',
@@ -113,8 +111,7 @@ export default function Page() {
 				date: '08/03/2024',
 				location: 'Nhà Hàng Tiệc Cưới Thành Đạt',
 				image: Event1Image,
-				google_map:
-					'https://maps.app.goo.gl/znqeC4dKTfkLtnps5',
+				google_map: 'https://maps.app.goo.gl/znqeC4dKTfkLtnps5',
 				calendar_data: {
 					name: 'TIỆC CƯỚI NHÀ NỮ (Đám cưới Anh Khiêm và Như Ý)',
 					description:
@@ -146,8 +143,7 @@ export default function Page() {
 				date: '09/03/2024',
 				location: 'Tư Gia',
 				image: Event2Image,
-				google_map:
-					'https://maps.app.goo.gl/39Z7wGAGjJtW5mz69',
+				google_map: 'https://maps.app.goo.gl/39Z7wGAGjJtW5mz69',
 				calendar_data: {
 					name: 'TIỆC CƯỚI NHÀ NAM (Đám cưới Anh Khiêm và Như Ý)',
 					description:

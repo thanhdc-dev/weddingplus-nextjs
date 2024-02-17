@@ -6,7 +6,7 @@ export const openGraph = {
 	description: 'Chia sẻ yêu thương, kỷ niệm đáng nhớ cùng Wedding+',
 	url: config.appBaseUrl,
 	siteName: 'Wedding+',
-	images: OpenGraphImage.src,
+	images: [OpenGraphImage.src],
 	locale: 'vi_VN',
 	type: 'website',
 };
@@ -18,5 +18,5 @@ export const twitter = {
 	siteId: '@d_congthanh',
 	creator: '@nextjs',
 	creatorId: '@d_congthanh',
-	images: OpenGraphImage.src,
+	images: [OpenGraphImage.src],
 };
