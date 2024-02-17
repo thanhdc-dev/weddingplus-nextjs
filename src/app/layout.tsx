@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 	themeColor: '#df4759',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	return (
 		<html lang="vi">
 			{process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && <GoogleTagManager googleTagManagerId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />}
