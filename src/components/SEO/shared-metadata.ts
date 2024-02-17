@@ -1,11 +1,12 @@
 import config from '@/libs/config';
+import OpenGraphImage from '@public/og/og-image.webp';
 
 export const openGraph = {
 	title: 'Wedding+',
 	description: 'Chia sẻ yêu thương, kỷ niệm đáng nhớ cùng Wedding+',
 	url: config.appBaseUrl,
 	siteName: 'Wedding+',
-	images: '/og/og-image.webp',
+	images: OpenGraphImage.src,
 	locale: 'vi_VN',
 	type: 'website',
 };
@@ -17,5 +18,5 @@ export const twitter = {
 	siteId: '@d_congthanh',
 	creator: '@nextjs',
 	creatorId: '@d_congthanh',
-	images: '/og/og-image.webp',
+	images: OpenGraphImage.src,
 };
