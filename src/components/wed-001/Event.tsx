@@ -2,9 +2,11 @@ import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import OwlCarousel from 'react-owl-carousel';
 
 import { Cormorant_Garamond } from 'next/font/google';
+import dynamic from 'next/dynamic';
+
+const OwlCarousel = dynamic(() => import('react-owl-carousel'), { ssr: false });
 
 const cormorantGaramondFont = Cormorant_Garamond({
 	subsets: ['latin', 'vietnamese'],
