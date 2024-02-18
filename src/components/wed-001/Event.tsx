@@ -21,7 +21,7 @@ export type EventProps = {
 		time: string;
 		date: string;
 		google_map: string;
-		calendar_data: any;
+		calendar_data?: any;
 	}[];
 };
 
