@@ -2,7 +2,7 @@ import GoogleTagManager from '@/components/SEO/GoogleTagManager';
 import { openGraph, twitter } from '@/components/SEO/shared-metadata';
 import Navbar from '@/components/navbar/navbar';
 import config from '@/libs/config';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 
@@ -21,7 +21,6 @@ export const metadata: Metadata = {
 	applicationName: 'Wedding+',
 	keywords: ['Wedding website', 'Weddingplus', 'Wedding+'],
 	authors: [{ name: 'Weddingplus', url: config.appBaseUrl }],
-	colorScheme: 'only light',
 	creator: 'Weddingplus',
 	publisher: 'Weddingplus',
 	formatDetection: {
@@ -42,8 +41,12 @@ export const metadata: Metadata = {
 					follow: true,
 			  }
 			: {},
-	themeColor: '#df4759',
 };
+
+export const viewport: Viewport = {
+  themeColor: '#df4759',
+  colorScheme: 'only light'
+}
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	return (
