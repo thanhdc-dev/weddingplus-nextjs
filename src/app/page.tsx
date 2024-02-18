@@ -595,13 +595,13 @@ export default function Home() {
 			data: templateData,
 		},
 		section_pricing: {
-			active: true,
+			active: false,
 			data: pricingData,
 		},
 	};
 
 	return (
-		<main id='main' className='pt-[52px]'>
+		<main id='main' className='pt-[52px] xl:pt-[60px]'>
 			{data?.section_banner?.active && <Banner {...data.section_banner.data} />}
 			{data?.section_template?.active && <Template {...data.section_template.data} />}
 			{data?.section_pricing?.active && <Pricing {...data.section_pricing.data} />}

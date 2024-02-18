@@ -22,51 +22,45 @@ export default function Navbar() {
 		badge: string;
 	};
 	const leftmenu: Menu[] = [
-		{
-			id: 'banner',
-			label: 'Home',
-			href: '/',
-			external: false,
-			badge: '',
-		},
-		{
-			id: 'templates',
-			label: 'Templates',
-			href: '/#templates',
-			external: false,
-			badge: '',
-		},
+		// {
+		// 	id: 'banner',
+		// 	label: 'Home',
+		// 	href: '/',
+		// 	external: false,
+		// 	badge: '',
+		// },
+		// {
+		// 	id: 'templates',
+		// 	label: 'Templates',
+		// 	href: '/#templates',
+		// 	external: false,
+		// 	badge: '',
+		// },
 	];
 
 	const rightmenu: Menu[] = [
-		{
-			id: 'pricing',
-			label: 'Pricing',
-			href: '/#pricing',
-			external: false,
-			badge: '',
-		},
+		// {
+		// 	id: 'pricing',
+		// 	label: 'Pricing',
+		// 	href: '/#pricing',
+		// 	external: false,
+		// 	badge: '',
+		// },
 	];
 
 	const mobilemenu = [...leftmenu, ...rightmenu];
 
 	return (
-		<nav className="fixed top-0 left-0 right-0 bg-white z-50">
+		<nav className="fixed top-0 left-0 right-0 bg-white z-50 min-h-[52px] xl:min-h-[60px] flex justify-center items-center">
 			<Disclosure>
 				{({ open }) => (
 					<>
 						<div className="flex flex-wrap justify-between md:flex-nowrap md:gap-10 py-1">
 							<div className="order-1 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row md:justify-end">
 								{leftmenu.map((item, index) => (
-									<LinkScroll
-										to={item.id}
-										spy
-										smooth
-										offset={-50}
-										duration={500}
-										activeClass={styles.menuActive}
+									<Link
 										href={item.href}
-										key={`${item.label}${index}`}
+										key={item.href}
 										className="px-5 py-2 text-xl font-medium rounded-lg mx-1 text-gray-600 hover:text-white focus:text-white hover:bg-primary"
 										target={item.external ? '_blank' : ''}
 										rel={item.external ? 'noopener' : ''}
@@ -77,7 +71,7 @@ export default function Navbar() {
 												{item.badge}
 											</span>
 										)}
-									</LinkScroll>
+									</Link>
 								))}
 							</div>
 							<div className="flex w-full items-center justify-between md:w-auto">
@@ -87,43 +81,39 @@ export default function Navbar() {
 								>
 									<span className="px-2 text-center">Wedding +</span>
 								</Link>
-								<Disclosure.Button
-									aria-label="Toggle Menu"
-									className="ml-auto rounded-md px-2 py-1 text-gray-500 focus:text-primary focus:outline-none md:hidden"
-								>
-									<svg
-										className="h-6 w-6 fill-current"
-										xmlns="http://www.w3.org/2000/svg"
-										viewBox="0 0 24 24"
+								{!!mobilemenu.length && (
+									<Disclosure.Button
+										aria-label="Toggle Menu"
+										className="ml-auto rounded-md px-2 py-1 text-gray-500 focus:text-primary focus:outline-none md:hidden"
 									>
-										{open && (
-											<path
-												fillRule="evenodd"
-												clipRule="evenodd"
-												d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
-											/>
-										)}
-										{!open && (
-											<path
-												fillRule="evenodd"
-												d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-											/>
-										)}
-									</svg>
-								</Disclosure.Button>
+										<svg
+											className="h-6 w-6 fill-current"
+											xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 24 24"
+										>
+											{open && (
+												<path
+													fillRule="evenodd"
+													clipRule="evenodd"
+													d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
+												/>
+											)}
+											{!open && (
+												<path
+													fillRule="evenodd"
+													d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+												/>
+											)}
+										</svg>
+									</Disclosure.Button>
+								)}
 							</div>
 
 							<div className="order-2 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row">
 								{rightmenu.map((item, index) => (
-									<LinkScroll
-										to={item.id}
-										spy
-										smooth
-										offset={0}
-										duration={500}
-										activeClass={styles.menuActive}
+									<Link
 										href={item.href}
-										key={`${item.label}${index}`}
+										key={item.href}
 										className="px-5 py-2 text-xl font-medium rounded-lg mx-1 text-gray-600 hover:text-white focus:text-white hover:bg-primary"
 										target={item.external ? '_blank' : ''}
 										rel={item.external ? 'noopener' : ''}
@@ -134,7 +124,7 @@ export default function Navbar() {
 												{item.badge}
 											</span>
 										)}
-									</LinkScroll>
+									</Link>
 								))}
 							</div>
 						</div>
