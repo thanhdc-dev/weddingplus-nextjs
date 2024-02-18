@@ -2,7 +2,7 @@ import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import dynamic from 'next/dynamic';
+import OwlCarousel from 'react-owl-carousel';
 
 import { Cormorant_Garamond } from 'next/font/google';
 
@@ -10,8 +10,6 @@ const cormorantGaramondFont = Cormorant_Garamond({
 	subsets: ['latin', 'vietnamese'],
 	weight: ['400', '500', '600'],
 });
-
-const OwlCarousel = dynamic(() => import('react-owl-carousel'), { ssr: false });
 
 export type EventProps = {
 	items: {
@@ -26,25 +24,34 @@ export type EventProps = {
 };
 
 export default function Events({ items }: Readonly<EventProps>) {
+	const totalItems = items.length;
+	let responsiveOption = {};
+	if (totalItems > 1) {
+		responsiveOption = { ...responsiveOption, '0': { items: 1 } };
+	}
+	if (totalItems >= 2) {
+		responsiveOption = { ...responsiveOption, '576': { items: 2 } };
+	}
+	if (totalItems >= 3) {
+		responsiveOption = { ...responsiveOption, '768': { items: 3 } };
+	}
+	if (totalItems >= 4) {
+		responsiveOption = { ...responsiveOption, '992': { items: 4 } };
+	}
 	const owlOptions = {
-		responsive: {
-			'0': { items: 1 },
-			'576': { items: 2 },
-			// '768': { items: 3 },
-			// '992': { items: 4 },
-		},
+		responsive: responsiveOption,
 		autoplay: false,
 		autoplayTimeout: 3000,
-		loop: true,
+		loop: false,
 		dots: true,
 		margin: 30,
 	};
 
 	const CarouseItens = items.map((item, index) => {
 		return (
-			<div key={index} className="py-5 md:py-8 bg-white">
+			<div key={item.title} className="py-5 md:py-8 bg-white">
 				<div className="whenwhere-img">
-					<Image src={item.image} alt={item.title} loading="lazy" />
+					<Image className="rounded-md" src={item.image} alt={item.title} loading="lazy" />
 				</div>
 				<div className="content">
 					<h5 className="text-xl pt-2 pb-3 uppercase">{item.title}</h5>
