@@ -59,39 +59,13 @@ export default function Page() {
 			name: 'Anh Khiêm',
 			avatar: GroomImage,
 			description: '',
-			socials: [
-				{
-					icon: 'ti-instagram',
-					link: 'https://instagram.com',
-				},
-				{
-					icon: 'ti-twitter',
-					link: 'https://twitter.com',
-				},
-				{
-					icon: 'ti-facebook',
-					link: 'https://facebook.com',
-				},
-			],
+			socials: [],
 		},
 		bride: {
 			name: 'Như Ý',
 			avatar: BrideImage,
 			description: '',
-			socials: [
-				{
-					icon: 'ti-instagram',
-					link: 'https://instagram.com',
-				},
-				{
-					icon: 'ti-twitter',
-					link: 'https://twitter.com',
-				},
-				{
-					icon: 'ti-facebook',
-					link: 'https://facebook.com',
-				},
-			],
+			socials: [],
 		},
 	};
 	const countdownData: CountdownProps = {
@@ -112,30 +86,6 @@ export default function Page() {
 				location: 'Nhà Hàng Tiệc Cưới Thành Đạt',
 				image: Event1Image,
 				google_map: 'https://maps.app.goo.gl/znqeC4dKTfkLtnps5',
-				calendar_data: {
-					name: 'TIỆC CƯỚI NHÀ NỮ (Đám cưới Anh Khiêm và Như Ý)',
-					description:
-						'Cảm ơn bạn đã dành thời gian tham dự đám cưới của chúng tôi!. Thông tin chi tiết xem tại website:<br/>[url]https://weddingplus.app[/url]',
-					start_date: '2024-03-08',
-					end_date: '2024-03-08',
-					start_time: '11:30 AM',
-					end_time: '13:00 AM',
-					location: 'A30 Trần Hưng Đạo, P. An Hải Tây, Quận Sơn Trà, Đà Nẵng',
-					options: [
-						'Apple',
-						'Google',
-						'iCal',
-						'Microsoft365',
-						'MicrosoftTeams',
-						'Outlook.com',
-						'Yahoo',
-					],
-					time_zone: 'Asia/Ho_Chi_Minh',
-					i_cal_file_name: 'Reminder-Event',
-					list_style: 'modal',
-					label: 'Thêm vào lịch',
-					trigger: 'click',
-				},
 			},
 			{
 				title: 'TIỆC CƯỚI NHÀ NAM',
@@ -144,30 +94,6 @@ export default function Page() {
 				location: 'Tư Gia',
 				image: Event2Image,
 				google_map: 'https://maps.app.goo.gl/39Z7wGAGjJtW5mz69',
-				calendar_data: {
-					name: 'TIỆC CƯỚI NHÀ NAM (Đám cưới Anh Khiêm và Như Ý)',
-					description:
-						'Cảm ơn bạn đã dành thời gian tham dự đám cưới của chúng tôi!. Thông tin chi tiết xem tại website:<br/>[url]https://weddingplus.app[/url]',
-					start_date: '2024-03-09',
-					end_date: '2024-03-09',
-					start_time: '12:00 AM',
-					end_time: '13:00 AM',
-					location: 'A30 Trần Hưng Đạo, P. An Hải Tây, Quận Sơn Trà, Đà Nẵng',
-					options: [
-						'Apple',
-						'Google',
-						'iCal',
-						'Microsoft365',
-						'MicrosoftTeams',
-						'Outlook.com',
-						'Yahoo',
-					],
-					time_zone: 'Asia/Ho_Chi_Minh',
-					i_cal_file_name: 'Reminder-Event',
-					list_style: 'modal',
-					label: 'Thêm vào lịch',
-					trigger: 'click',
-				},
 			},
 		],
 	};
