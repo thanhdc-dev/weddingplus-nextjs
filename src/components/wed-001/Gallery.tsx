@@ -2,6 +2,7 @@ import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { Alex_Brush, Cormorant_Garamond } from 'next/font/google';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+import Fancybox from '@components/Fancybox';
 
 const alexBrushFont = Alex_Brush({
 	subsets: ['latin', 'vietnamese'],
@@ -20,8 +21,8 @@ export type GalleryProps = {
 export default function Gallery({ items }: Readonly<GalleryProps>) {
 	const Itens = items.map((image, index) => {
 		return (
-			<div key={index} className="grid-item p-2">
-				<Link href={image.src} className="block img-zoom">
+			<div key={image.src} className="grid-item p-2">
+				<Link data-fancybox="gallery" href={image.src} className="block">
 					<div className="overflow-hidden group">
 						<Image
 							className="w-full h-auto mx-auto transition-all group-hover:scale-105"
@@ -50,9 +51,17 @@ export default function Gallery({ items }: Readonly<GalleryProps>) {
 				</div>
 			</div>
 			<div className="container">
-				<ResponsiveMasonry columnsCountBreakPoints={{ 0: 2, 768: 3 }}>
-					<Masonry className="masonry-gallery -mx-2">{Itens}</Masonry>
-				</ResponsiveMasonry>
+				<Fancybox
+					options={{
+						Carousel: {
+							infinite: false,
+						},
+					}}
+				>
+					<ResponsiveMasonry columnsCountBreakPoints={{ 0: 2, 768: 3 }}>
+						<Masonry className="masonry-gallery -mx-2">{Itens}</Masonry>
+					</ResponsiveMasonry>
+				</Fancybox>
 			</div>
 		</section>
 	);
