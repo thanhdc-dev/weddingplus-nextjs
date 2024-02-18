@@ -3,6 +3,7 @@ import Link from 'next/link';
 import 'animate.css/animate.min.css';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import { Alex_Brush, Cormorant_Garamond } from 'next/font/google';
+import { TfiFacebook, TfiInstagram, TfiLinkedin, TfiTwitterAlt } from 'react-icons/tfi';
 
 const alexBrushFont = Alex_Brush({
 	subsets: ['latin', 'vietnamese'],
@@ -14,13 +15,34 @@ const cormorantGaramondFont = Cormorant_Garamond({
 	weight: ['400', '500', '600'],
 });
 
+type IconTypeProps = 'facebook' | 'twitter' | 'linkedin' | 'instagram';
+
+type IconProps = {
+	type: IconTypeProps;
+};
+
+const Icon = ({ type }: IconProps) => {
+	switch (type) {
+		case 'facebook':
+			return <TfiFacebook className="hover:text-wed001-primary" />;
+		case 'twitter':
+			return <TfiTwitterAlt className="hover:text-wed001-primary" />;
+		case 'linkedin':
+			return <TfiLinkedin className="hover:text-wed001-primary" />;
+		case 'instagram':
+			return <TfiInstagram className="hover:text-wed001-primary" />;
+		default:
+			return <i></i>;
+	}
+};
+
 export type CoupleProps = {
 	groom: {
 		name: string;
 		avatar: StaticImageData;
 		description: string;
 		socials: {
-			icon: string;
+			icon: IconTypeProps;
 			link: string;
 		}[];
 	};
@@ -29,7 +51,7 @@ export type CoupleProps = {
 		avatar: StaticImageData;
 		description: string;
 		socials: {
-			icon: string;
+			icon: IconTypeProps;
 			link: string;
 		}[];
 	};
@@ -39,7 +61,7 @@ export default function Couple({ groom, bride }: Readonly<CoupleProps>) {
 	type SocialProps = {
 		className?: string;
 		items: {
-			icon: string;
+			icon: IconTypeProps;
 			link: string;
 		}[];
 	};
@@ -52,6 +74,7 @@ export default function Couple({ groom, bride }: Readonly<CoupleProps>) {
 					className="icon text-center leading-[35px] text-xs w-[35px] h-[35px]"
 				>
 					<i className={`${item.icon} leading-[35px]`}></i>
+					<Icon type={item.icon} />
 				</Link>
 			);
 		});
@@ -70,7 +93,7 @@ export default function Couple({ groom, bride }: Readonly<CoupleProps>) {
 						>
 							<div className="lg:w-[140px] lg:h-[140px] lg:mt-[50px] overflow-hidden flex items-center lg:items-baseline justify-center lg:ml-6">
 								<Image
-									className="rounded-full border border-wed001-primary"
+									className="rounded-full border-[3px] border-wed001-primary"
 									width={140}
 									height={140}
 									src={groom.avatar}
@@ -98,7 +121,7 @@ export default function Couple({ groom, bride }: Readonly<CoupleProps>) {
 						>
 							<div className="lg:w-[140px] lg:h-[140px] lg:mt-[50px] overflow-hidden flex items-center lg:items-baseline justify-center lg:mr-6">
 								<Image
-									className="rounded-full border border-wed001-primary"
+									className="rounded-full border-[3px] border-wed001-primary"
 									width={140}
 									height={140}
 									src={bride.avatar}
