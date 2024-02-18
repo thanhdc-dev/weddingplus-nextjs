@@ -62,15 +62,15 @@ export default function Page() {
 				'Là bác sĩ nha khoa hiện đang công tác tại một phòng khám nha khoa ở Quận 1 thành phồ Hồ Chí Minh. Là một người hiền lành và ít nói. Luôn coi trọng tình cảm và yêu thương gia đình.',
 			socials: [
 				{
-					icon: 'ti-instagram',
+					icon: 'instagram',
 					link: 'https://instagram.com',
 				},
 				{
-					icon: 'ti-twitter',
+					icon: 'twitter',
 					link: 'https://twitter.com',
 				},
 				{
-					icon: 'ti-facebook',
+					icon: 'facebook',
 					link: 'https://facebook.com',
 				},
 			],
@@ -82,15 +82,15 @@ export default function Page() {
 				'Cô gái đến từ xứ Huế mộng mơ, hiện đang sinh sống và làm việc tại Sài Gòn. Sau khi tốt nghiệp Học viện Báo chí và Tuyên truyền, quyết tâm theo đuổi đam mê làm phóng viên du lịch. Là một người hay cười nhưng lại sống nội tâm, thích đọc sách, trồng cây và yêu thiên nhiên.',
 			socials: [
 				{
-					icon: 'ti-instagram',
+					icon: 'instagram',
 					link: 'https://instagram.com',
 				},
 				{
-					icon: 'ti-twitter',
+					icon: 'twitter',
 					link: 'https://twitter.com',
 				},
 				{
-					icon: 'ti-facebook',
+					icon: 'facebook',
 					link: 'https://facebook.com',
 				},
 			],
