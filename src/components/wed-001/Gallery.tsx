@@ -25,7 +25,7 @@ export default function Gallery({ items }: Readonly<GalleryProps>) {
 				<Link data-fancybox="gallery" href={image.src} className="block">
 					<div className="overflow-hidden group">
 						<Image
-							className="w-full h-auto mx-auto transition-all group-hover:scale-105"
+							className="w-full h-auto mx-auto transition-all group-hover:scale-105 rounded-md"
 							src={image}
 							alt={`Gallery item ${index}`}
 						/>

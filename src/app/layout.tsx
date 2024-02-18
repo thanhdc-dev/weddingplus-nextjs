@@ -55,7 +55,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 			<body className={`${inter.className} bg-white`}>
 				<Navbar />
 				{children}
-				<footer className="py-4 text-center bg-white">
+				<footer className="py-4 text-center bg-[#f7f7f7]">
 					<p className="mb-0">© 2023 Copyright Wedding+</p>
 				</footer>
 			</body>
