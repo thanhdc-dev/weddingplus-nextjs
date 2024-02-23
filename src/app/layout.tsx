@@ -5,6 +5,7 @@ import config from '@/libs/config';
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -58,6 +59,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 				<footer className="py-4 text-center bg-[#f7f7f7]">
 					<p className="mb-0">© 2023 Copyright Wedding+</p>
 				</footer>
+				<Analytics />
 			</body>
 		</html>
 	);
