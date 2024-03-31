@@ -36,9 +36,9 @@ export default function Footer({
 						<h2>
 							<Image className="w-[90px] mx-auto mb-3" src={image} alt="footer" />
 							<span className={`${alexBrushFont.className} font-normal text-4xl`}>
-								{groomName}
-								<small className="px-4">&amp;</small>
-								{brideName}
+								<span className='block md:inline'>{groomName}</span>
+								<small className="px-4 block md:inline">&amp;</small>
+								<span className='block md:inline'>{brideName}</span>
 							</span>
 						</h2>
 						<p className={`${nunitoSansFont.className} copyright text-lg italic`}>
