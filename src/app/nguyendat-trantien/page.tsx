@@ -1,4 +1,6 @@
 'use client';
+import BankBrideImage from '@public/images/nguyendat-trantien/bank-bride.webp';
+import BankGroomImage from '@public/images/nguyendat-trantien/bank-groom.webp';
 import BrideImage from '@public/images/nguyendat-trantien/bride.webp';
 import CountdownBgImage from '@public/images/nguyendat-trantien/countdown-bg.webp';
 import Event1Image from '@public/images/nguyendat-trantien/event-01.webp';
@@ -16,7 +18,6 @@ import Gallery08Image from '@public/images/nguyendat-trantien/gallery-08.webp';
 import Gallery09Image from '@public/images/nguyendat-trantien/gallery-09.webp';
 import Gallery10Image from '@public/images/nguyendat-trantien/gallery-10.webp';
 import Gallery11Image from '@public/images/nguyendat-trantien/gallery-11.webp';
-import Gallery12Image from '@public/images/nguyendat-trantien/gallery-12.webp';
 import Gallery13Image from '@public/images/nguyendat-trantien/gallery-13.webp';
 import Gallery14Image from '@public/images/nguyendat-trantien/gallery-14.webp';
 import Gallery15Image from '@public/images/nguyendat-trantien/gallery-15.webp';
@@ -55,6 +56,7 @@ import Story, { StoryProps } from '@/components/wed-001/Story';
 import Event, { EventProps } from '@/components/wed-001/Event';
 import Gallery, { GalleryProps } from '@/components/wed-001/Gallery';
 import Footer, { FooterProps } from '@/components/wed-001/Footer';
+import Bank, { BankProps } from '@/components/wed-001/Bank';
 
 const nunitoSansFont = Nunito_Sans({
 	subsets: ['latin', 'vietnamese'],
@@ -86,14 +88,14 @@ export default function Page() {
 			name: 'Vincent - Nguyễn Đạt',
 			avatar: GroomImage,
 			description:
-				'Chàng trai đến từ BaLi hiện là chuyên viên phần mềm tại thành phố Cần Thơ. Tính cách hướng ngoại, thích đi du lịch biển, yêu thiên nhiên, động vật.',
+				'Chàng trai đến từ Kiên Giang. Cô dâu nhận xét như sau: Là người có tính cách hướng ngoại partime, hiền lành, siêng năng, thông minh nhưng hơi vô tri.',
 			socials: [],
 		},
 		bride: {
 			name: 'Maria - Trần Tiên',
 			avatar: BrideImage,
 			description:
-				'Cô gái đến từ xứ sở Sóc Trăng, hiện đang công tác trong lĩnh vực ngân hàng tại Cần Thơ. Luôn yêu quý tất cả mọi người, thích ăn uống và đi núi cắm trại.',
+				'Cô gái đến từ Cần Thơ. Chú rể nhận xét thế này: Là một người hòa đồng nhưng hướng nội, vui vẻ nhưng khó tính. Dễ hiểu nhưng không đáng kể.',
 			socials: [],
 		},
 	};
@@ -103,7 +105,7 @@ export default function Page() {
 	};
 	const outStoryData: StoryProps = {
 		image: StoryImage,
-		description: `<p>Các bạn có tin vào tình yêu từ cái nhìn đầu tiên không? Không, đối với chúng tôi thì không tin vào điều đó.</p><p>Vì từ thời điểm gặp nhau cho đến hơn một năm sau đó chúng tôi vẫn nghĩ khả năng chúng tôi thành một cặp là 0%</p><p>Vậy mà các bạn biết không, vào một ngày chống dịch, tôi nhận được một tin nhắn “corona thì anh không chữa được còn codonqua thì anh chữa được nha"</p><p>Từ đó, chúng tôi từ hai người xa lạ va vào nhau, tưởng chừng không tin nỗi nên phải hẹn gặp mặt nhau vào ngày hôm sau đó.</p><p>Những cuộc hẹn nhiều lên, chúng tôi rong ruổi khắp mọi con đường, kể cho nhau nghe rất nhiều chuyện như thể  đã thân thiết từ lâu,</p><p>Qua độ tuổi rong ruổi, chúng tôi tiếp tục trải qua nhiều thăng trầm từ công việc, gia đình, tuy không vất vả hơn bao người, nhưng tất cả những trải nghiệm đối với chúng tôi rất quý báu.</p><p>* Và ngày 21/1/2023 chúng tôi đã Say Yes!</p><p>4 năm bên nhau không phải quãng thời gian quá dài, nhưng đủ cho chúng ta nhận ra nhiều điều. Yêu nhau, vun vén hạnh phúc và cùng nỗ lực vượt qua những khó khăn trong cuộc sống. Và giờ đây chúng ta tiếp tục cùng nhau bước sang trang mới thật hạnh phúc, thật thành công.</p><p><b>LỜI CẢM ƠN</b></p><p>Thật vui vì được gặp và đón tiếp các bạn trong một dịp đặc biệt như đám cưới của chúng tôi. Chúng tôi muốn gửi đến các bạn lời cảm ơn sâu sắc nhất để bạn biết chúng tôi rất hạnh phúc khi thấy bạn ở đó. Cảm ơn các bạn rất nhiều vì sự hiện diện cùng những lời chúc tốt đẹp mà bạn đã dành cho chúng tôi!</p>`,
+		description: `<p>Chúng tớ gặp nhau vào tháng 10/2016 khi cùng tham gia, hoạt động trong nhóm Giới trẻ Giáo Phận Long Xuyên cụm Cần Thơ.</p><p>Thật hài hước khi cả hai đều đã có một đối tượng khác và đang trong giai đoạn mập mờ. Chúng tớ trở nên thân thiết khi luôn sáp lại chọc ghẹo, tra hỏi nhau về những nghi ngờ của đối phương về mối quan hệ với đối tượng kia như một thám tử thực thụ.</p><p>Trớ trêu thay khi bạn bè, những người ngoài cuộc chẳng hiểu chủ để hai đứa đang nói với nhau, chỉ thấy cứ sáp lại thì mọi nghi ngờ được đẩy lên cao về mối quan hệ của hai đứa.</p><p>Một chiếc thuyền được ra khơi từ những hiểu lầm mà chẳng có lời giải thích. Người xưa có câu: Lửa gần rơm lâu ngày cũng bén. Và nó bén thật sự mọi người ạ. Hai đứa chẳng thể biết được nó đã bén từ lúc nào.</p><p>Dĩ nhiên chiếc thuyền cũng không hoàn toàn thuận buồm xuôi gió đâu, cũng có những lúc chênh vênh do hiểu lầm và mém từ bỏ.</p><p>Nhưng cuối cùng. Tháng 01/2017 chúng tớ đã chính thức hẹn hò. Và mối tình này chẳng có lời tỏ tình nào. Mọi thứ diễn ra tự nhiên chẳng có cột mốc đánh dấu nào cả.</p><p>Chúng tớ không có ngày tỏ tình và 7 năm sau cũng thế, cũng không có ngày cầu hôn luôn. Mọi sự diễn ra như 1 điều mặc định. Chúng tớ cho rằng, cuộc tình này là một trang sách mà Chúa đã viết sẵn cho hai đứa rồi.</p><p>Chúng tớ có THẤT TÌNH. Nhưng là THẤT là 7 và TÌNH là Tình yêu. Là 7 NĂM TÌNH CẢM. Người ta nói quen 7 năm hay chia tay lắm. Nên là sợ quá… sợ quá… phải cưới nó thôi.</p><p>Chúng tớ có THẤT TÌNH. Nhưng là THẤT là 7 và TÌNH là Tình yêu. Là 7 NĂM TÌNH CẢM. Người ta nói quen 7 năm hay chia tay lắm. Nên là sợ quá… sợ quá… phải cưới nó thôi.</p><p><b>LỜI CẢM ƠN</b></p><p>Thật vui vì được gặp và đón tiếp các bạn trong một dịp đặc biệt là đám cưới của chúng tớ. Chúng tớ muốn gửi đến các bạn lời cảm ơn sâu sắc nhất để bạn biết chúng tớ rất hạnh phúc khi thấy bạn ở đó. Cảm ơn các bạn rất nhiều vì sự hiện diện cùng những lời chúc tốt đẹp mà bạn đã dành cho chúng tớ!</p>`,
 	};
 	const eventData: EventProps = {
 		items: [
@@ -119,15 +121,15 @@ export default function Page() {
 				title: 'TIỆC CƯỚI NHÀ NỮ',
 				time: '11:00 AM',
 				date: '29/04/2024',
-				location: 'Tư Gia',
+				location: 'Số 99, ấp Thầy Ký - TT Thạnh An, Vĩnh Thạnh, Cần Thơ',
 				image: Event1Image,
-				google_map: 'https://maps.app.goo.gl/znqeC4dKTfkLtnps5',
+				google_map: 'https://maps.app.goo.gl/UgvboQkmGBw61ALU9',
 			},
 			{
 				title: 'TIỆC CƯỚI NHÀ NAM',
 				time: '10:30 AM',
 				date: '30/04/2024',
-				location: 'Tư Gia',
+				location: 'Số 343-345 ấp Kinh Tư, Bình Giang, Hòn Đất, Kiên Giang',
 				image: Event2Image,
 				google_map: 'https://maps.app.goo.gl/39Z7wGAGjJtW5mz69',
 			},
@@ -146,7 +148,6 @@ export default function Page() {
 			Gallery09Image,
 			Gallery10Image,
 			Gallery11Image,
-			Gallery12Image,
 			Gallery13Image,
 			Gallery14Image,
 			Gallery15Image,
@@ -174,6 +175,9 @@ export default function Page() {
 			Gallery37Image,
 			Gallery38Image,
 		],
+	};
+	const bankData: BankProps = {
+		items: [BankBrideImage, BankGroomImage]
 	};
 	const footerData: FooterProps = {
 		image: FooterImage,
@@ -206,6 +210,10 @@ export default function Page() {
 			active: true,
 			data: galleryData,
 		},
+		section_bank: {
+			active: true,
+			data: bankData,
+		},
 		section_footer: {
 			active: true,
 			data: footerData,
@@ -220,6 +228,7 @@ export default function Page() {
 			{data.section_out_story.active && <Story {...data.section_out_story.data} />}
 			{data.section_events.active && <Event {...data.section_events.data} />}
 			{data.section_gallery.active && <Gallery {...data.section_gallery.data} />}
+			{data.section_bank.active && <Bank {...data.section_bank.data} />}
 			{data.section_footer.active && <Footer {...data.section_footer.data} />}
 		</main>
 	);
