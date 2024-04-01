@@ -83,7 +83,7 @@ export default function Header({
 					className={`${nunitoSansFont.className} text-base lg:text-2xl tracking-[5px] uppercase text-white`}
 				>
 					<AnimationOnScroll animateIn="animate__fadeInUp" initiallyVisible={true} duration={0.8}>
-						<span className="wedding-date-d">{date}</span>
+						<span className="wedding-date-d">{date}/{date+1}</span>
 						<span>-</span>
 						<span className="wedding-date-m">{month}</span>
 						<span>-</span>
