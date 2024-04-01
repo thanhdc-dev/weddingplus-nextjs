@@ -5,6 +5,7 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 import { Cormorant_Garamond } from 'next/font/google';
 import dynamic from 'next/dynamic';
+import { TfiCalendar, TfiLocationPin, TfiTime } from 'react-icons/tfi';
 
 const OwlCarousel = dynamic(() => import('react-owl-carousel'), { ssr: false });
 
@@ -58,15 +59,15 @@ export default function Events({ items }: Readonly<EventProps>) {
 				<div className="content">
 					<h5 className="text-xl pt-5 uppercase">{item.title}</h5>
 					<p className='mb-2'>
-						<i className="ti-location-pin pr-2"></i>
+						<TfiLocationPin className="text-wed001-primary pr-2 inline text-xl" />
 						{item.location}
 					</p>
 					<p className='mb-2'>
-						<i className="ti-time pr-2"></i>
+						<TfiTime className="text-wed001-primary pr-2 inline text-xl" />
 						<span>{item.time}</span>
 					</p>
-					<p className='mb-2'>
-						<i className="ti-calendar pr-2"></i>
+					<p>
+						<TfiCalendar className="text-wed001-primary pr-2 inline text-xl" />
 						<span>{item.date}</span>
 					</p>
 					<Link
