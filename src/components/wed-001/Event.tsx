@@ -42,9 +42,9 @@ export default function Events({ items }: Readonly<EventProps>) {
 	}
 	const owlOptions = {
 		responsive: responsiveOption,
-		autoplay: false,
+		autoplay: true,
 		autoplayTimeout: 3000,
-		loop: false,
+		loop: true,
 		dots: true,
 		margin: 30,
 	};
@@ -56,16 +56,16 @@ export default function Events({ items }: Readonly<EventProps>) {
 					<Image className="rounded-md" src={item.image} alt={item.title} loading="lazy" />
 				</div>
 				<div className="content">
-					<h5 className="text-xl pt-2 pb-3 uppercase">{item.title}</h5>
-					<p>
+					<h5 className="text-xl pt-5 uppercase">{item.title}</h5>
+					<p className='mb-2'>
 						<i className="ti-location-pin pr-2"></i>
 						{item.location}
 					</p>
-					<p>
+					<p className='mb-2'>
 						<i className="ti-time pr-2"></i>
 						<span>{item.time}</span>
 					</p>
-					<p>
+					<p className='mb-2'>
 						<i className="ti-calendar pr-2"></i>
 						<span>{item.date}</span>
 					</p>
