@@ -9,28 +9,46 @@ const alexBrushFont = Alex_Brush({
 });
 
 export type CountdownProps = {
+	classname?: string;
 	weddingDate: Date;
 	backgroundImage: StaticImageData;
+	backgroundLargeImage?: StaticImageData;
 };
 
-export default function Countdown({ weddingDate, backgroundImage }: Readonly<CountdownProps>) {
+export default function Countdown({
+	classname,
+	weddingDate,
+	backgroundImage,
+	backgroundLargeImage,
+}: Readonly<CountdownProps>) {
 	const targetDate = weddingDate.getTime();
 	const [days, hours, minutes, seconds] = useCountdown(targetDate);
 
 	return (
-		<section id="section-countdown" className="relative py-14">
+		<section id="section-countdown" className={`relative py-14 ${classname}`}>
 			<div className="absolute top-0 left-0 w-full h-full z-[-1]">
-				<Image
-					alt="Count down background"
-					src={backgroundImage}
-					placeholder="blur"
-					quality={100}
-					fill
-					sizes="100vw"
-					style={{
-						objectFit: 'cover',
-					}}
-				/>
+				<picture>
+					{backgroundLargeImage && (
+						<source
+							media="(min-width:768px)"
+							srcSet={backgroundLargeImage.src}
+							width={500}
+							height={375}
+						/>
+					)}
+
+					<Image
+						alt="Count down background"
+						src={backgroundImage}
+						placeholder="blur"
+						quality={100}
+						fill
+						sizes="100vw"
+						style={{
+							objectFit: 'cover',
+						}}
+					/>
+				</picture>
 			</div>
 			<div className="container text-center text-white">
 				<div className="section-head col-md-12">
