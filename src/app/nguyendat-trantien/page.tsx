@@ -3,6 +3,8 @@ import BankBrideImage from '@public/images/nguyendat-trantien/bank-bride.webp';
 import BankGroomImage from '@public/images/nguyendat-trantien/bank-groom.webp';
 import BrideImage from '@public/images/nguyendat-trantien/bride.webp';
 import CountdownBgImage from '@public/images/nguyendat-trantien/countdown-bg.webp';
+import CountdownBgLargeImage from '@public/images/nguyendat-trantien/countdown-bg-large.webp';
+import ColoStyleImage from '@public/images/nguyendat-trantien/color-style.webp';
 import Event1Image from '@public/images/nguyendat-trantien/event-01.webp';
 import Event2Image from '@public/images/nguyendat-trantien/event-02.webp';
 import Event3Image from '@public/images/nguyendat-trantien/event-03.webp';
@@ -48,7 +50,7 @@ import GroomImage from '@public/images/nguyendat-trantien/groom.webp';
 import SliderLargeImage from '@public/images/nguyendat-trantien/slider-large.webp';
 import SliderImage from '@public/images/nguyendat-trantien/slider.webp';
 import StoryImage from '@public/images/nguyendat-trantien/story.webp';
-import { Nunito_Sans } from 'next/font/google';
+import { Alex_Brush, Nunito_Sans } from 'next/font/google';
 import Header, { HeaderProps } from '@/components/wed-001/Header';
 import Couple, { CoupleProps } from '@/components/wed-001/Couple';
 import Countdown, { CountdownProps } from '@/components/wed-001/Countdown';
@@ -57,10 +59,16 @@ import Event, { EventProps } from '@/components/wed-001/Event';
 import Gallery, { GalleryProps } from '@/components/wed-001/Gallery';
 import Footer, { FooterProps } from '@/components/wed-001/Footer';
 import Bank, { BankProps } from '@/components/wed-001/Bank';
+import Image from 'next/image';
 
 const nunitoSansFont = Nunito_Sans({
 	subsets: ['latin', 'vietnamese'],
 	weight: ['400', '600', '700'],
+});
+
+const alexBrushFont = Alex_Brush({
+	subsets: ['latin', 'vietnamese'],
+	weight: ['400'],
 });
 
 export default function Page() {
@@ -100,12 +108,14 @@ export default function Page() {
 		},
 	};
 	const countdownData: CountdownProps = {
+		classname: 'md:min-h-[425px]',
 		weddingDate,
 		backgroundImage: CountdownBgImage,
+		backgroundLargeImage: CountdownBgLargeImage,
 	};
 	const outStoryData: StoryProps = {
 		image: StoryImage,
-		description: `<p>Chúng tớ gặp nhau vào tháng 10/2016 khi cùng tham gia, hoạt động trong nhóm Giới trẻ Giáo Phận Long Xuyên cụm Cần Thơ.</p><p>Thật hài hước khi cả hai đều đã có một đối tượng khác và đang trong giai đoạn mập mờ. Chúng tớ trở nên thân thiết khi luôn sáp lại chọc ghẹo, tra hỏi nhau về những nghi ngờ của đối phương về mối quan hệ với đối tượng kia như một thám tử thực thụ.</p><p>Trớ trêu thay khi bạn bè, những người ngoài cuộc chẳng hiểu chủ để hai đứa đang nói với nhau, chỉ thấy cứ sáp lại thì mọi nghi ngờ được đẩy lên cao về mối quan hệ của hai đứa.</p><p>Một chiếc thuyền được ra khơi từ những hiểu lầm mà chẳng có lời giải thích. Người xưa có câu: Lửa gần rơm lâu ngày cũng bén. Và nó bén thật sự mọi người ạ. Hai đứa chẳng thể biết được nó đã bén từ lúc nào.</p><p>Dĩ nhiên chiếc thuyền cũng không hoàn toàn thuận buồm xuôi gió đâu, cũng có những lúc chênh vênh do hiểu lầm và mém từ bỏ.</p><p>Nhưng cuối cùng. Tháng 01/2017 chúng tớ đã chính thức hẹn hò. Và mối tình này chẳng có lời tỏ tình nào. Mọi thứ diễn ra tự nhiên chẳng có cột mốc đánh dấu nào cả.</p><p>Chúng tớ không có ngày tỏ tình và 7 năm sau cũng thế, cũng không có ngày cầu hôn luôn. Mọi sự diễn ra như 1 điều mặc định. Chúng tớ cho rằng, cuộc tình này là một trang sách mà Chúa đã viết sẵn cho hai đứa rồi.</p><p>Chúng tớ có THẤT TÌNH. Nhưng là THẤT là 7 và TÌNH là Tình yêu. Là 7 NĂM TÌNH CẢM. Người ta nói quen 7 năm hay chia tay lắm. Nên là sợ quá… sợ quá… phải cưới nó thôi.</p><p><b>LỜI CẢM ƠN</b></p><p>Thật vui vì được gặp và đón tiếp các bạn trong một dịp đặc biệt là đám cưới của chúng tớ. Chúng tớ muốn gửi đến các bạn lời cảm ơn sâu sắc nhất để bạn biết chúng tớ rất hạnh phúc khi thấy bạn ở đó. Cảm ơn các bạn rất nhiều vì sự hiện diện cùng những lời chúc tốt đẹp mà bạn đã dành cho chúng tớ!</p>`,
+		description: `<p>Chúng tớ gặp nhau vào tháng 10/2016 khi cùng tham gia, hoạt động trong nhóm Giới trẻ Giáo Phận Long Xuyên cụm Cần Thơ.</p><p>Thật hài hước khi cả hai đều đã có một đối tượng khác và đang trong giai đoạn mập mờ. Chúng tớ trở nên thân thiết khi luôn sáp lại chọc ghẹo, tra hỏi nhau về những nghi ngờ của đối phương về mối quan hệ với đối tượng kia như một thám tử thực thụ.</p><p>Trớ trêu thay khi bạn bè, những người ngoài cuộc chẳng hiểu chủ để hai đứa đang nói với nhau, chỉ thấy cứ sáp lại thì mọi nghi ngờ được đẩy lên cao về mối quan hệ của hai đứa.</p><p>Một chiếc thuyền được ra khơi từ những hiểu lầm mà chẳng có lời giải thích. Người xưa có câu: Lửa gần rơm lâu ngày cũng bén. Và nó bén thật sự mọi người ạ. Hai đứa chẳng thể biết được nó đã bén từ lúc nào.</p><p>Dĩ nhiên chiếc thuyền cũng không hoàn toàn thuận buồm xuôi gió đâu, cũng có những lúc chênh vênh do hiểu lầm và mém từ bỏ.</p><p>Nhưng cuối cùng. Tháng 01/2017 chúng tớ đã chính thức hẹn hò. Và mối tình này chẳng có lời tỏ tình nào. Mọi thứ diễn ra tự nhiên chẳng có cột mốc đánh dấu nào cả.</p><p>Chúng tớ không có ngày tỏ tình và 7 năm sau cũng thế, cũng không có ngày cầu hôn luôn. Mọi sự diễn ra như 1 điều mặc định. Chúng tớ cho rằng, cuộc tình này là một trang sách mà Chúa đã viết sẵn cho hai đứa rồi.</p><p>Chúng tớ có THẤT TÌNH. Nhưng là THẤT là 7 và TÌNH là Tình yêu. Là 7 NĂM TÌNH CẢM. Người ta nói quen 7 năm hay chia tay lắm. Nên là sợ quá… sợ quá… phải cưới nó thôi.</p><p>Cách xưng hô của chúng tớ theo thời gian như sau: Ban đầu là ĐẠT – TIÊN, tiếp đó là MÀY – TAO, tiếp nữa là TUI – TIÊN, TUI – ĐẠT. Nhưng từ hôm nay chúng tớ sẽ trưởng thành hơn, sẽ thay đổi xưng là CHỒNG – VỢ nhé. Gia đình sẽ không còn mắng chửi, và bạn bè không còn ý kiến.</p><p><b>LỜI CẢM ƠN</b></p><p>Thật vui vì được gặp và đón tiếp các bạn trong một dịp đặc biệt là đám cưới của chúng tớ. Chúng tớ muốn gửi đến các bạn lời cảm ơn sâu sắc nhất để bạn biết chúng tớ rất hạnh phúc khi thấy bạn ở đó. Cảm ơn các bạn rất nhiều vì sự hiện diện cùng những lời chúc tốt đẹp mà bạn đã dành cho chúng tớ!</p>`,
 	};
 	const eventData: EventProps = {
 		items: [
@@ -118,7 +128,7 @@ export default function Page() {
 				google_map: 'https://maps.app.goo.gl/hLpur5DLGE6bwukg6',
 			},
 			{
-				title: 'TIỆC CƯỚI NHÀ NỮ',
+				title: 'TIỆC CƯỚI NHÀ GÁI',
 				time: '11:00 AM',
 				date: '29/04/2024',
 				location: 'Số 99, ấp Thầy Ký - TT Thạnh An, Vĩnh Thạnh, Cần Thơ',
@@ -126,12 +136,12 @@ export default function Page() {
 				google_map: 'https://maps.app.goo.gl/UgvboQkmGBw61ALU9',
 			},
 			{
-				title: 'TIỆC CƯỚI NHÀ NAM',
+				title: 'TIỆC CƯỚI NHÀ TRAI',
 				time: '10:30 AM',
 				date: '30/04/2024',
 				location: 'Số 343-345 ấp Kinh Tư, Bình Giang, Hòn Đất, Kiên Giang',
 				image: Event2Image,
-				google_map: 'https://maps.app.goo.gl/39Z7wGAGjJtW5mz69',
+				google_map: 'https://maps.app.goo.gl/uQrgWVJNhqRD6evb7',
 			},
 		],
 	};
@@ -177,7 +187,7 @@ export default function Page() {
 		],
 	};
 	const bankData: BankProps = {
-		items: [BankBrideImage, BankGroomImage]
+		items: [BankBrideImage, BankGroomImage],
 	};
 	const footerData: FooterProps = {
 		image: FooterImage,
@@ -227,9 +237,35 @@ export default function Page() {
 			{data.section_countdown.active && <Countdown {...data.section_countdown.data} />}
 			{data.section_out_story.active && <Story {...data.section_out_story.data} />}
 			{data.section_events.active && <Event {...data.section_events.data} />}
+			{ColorStyle()}
 			{data.section_gallery.active && <Gallery {...data.section_gallery.data} />}
 			{data.section_bank.active && <Bank {...data.section_bank.data} />}
 			{data.section_footer.active && <Footer {...data.section_footer.data} />}
 		</main>
+	);
+}
+
+function ColorStyle() {
+	return (
+		<section id="bank-couple" className="py-14">
+			<div className="container">
+				<div className="section-head col-md-12">
+					<h3
+						className={`${alexBrushFont.className} text-3xl mb-4 text-wed001-primary text-center`}
+					>
+						Nếu được hãy chọn cho mình một màu sắc theo bảng dưới đây nhé!
+					</h3>
+				</div>
+				<div className="-mx-4 md:flex justify-center items-center">
+					<Image
+						className="md:max-w-[500px] h-auto"
+						width={ColoStyleImage.width}
+						height={ColoStyleImage.height}
+						src={ColoStyleImage}
+						alt="color style"
+					/>
+				</div>
+			</div>
+		</section>
 	);
 }
