@@ -4,6 +4,7 @@ import { AnimationOnScroll } from 'react-animation-on-scroll';
 import { Alex_Brush, Nunito_Sans } from 'next/font/google';
 
 export type HeaderProps = {
+	positionTitleClass?: string;
 	weddingDate: Date;
 	bannerImage: StaticImageData;
 	bannerLargeImage: StaticImageData;
@@ -22,6 +23,7 @@ const nunitoSansFont = Nunito_Sans({
 });
 
 export default function Header({
+	positionTitleClass,
 	weddingDate,
 	bannerImage,
 	bannerLargeImage,
@@ -29,8 +31,12 @@ export default function Header({
 	brideName,
 }: Readonly<HeaderProps>) {
 	const year = weddingDate.getFullYear();
-	const month = weddingDate.getMonth() + 1;
-	const date = weddingDate.getDate();
+	const month = (weddingDate.getMonth() + 1).toString().padStart(2, '0');
+	const date = weddingDate.getDate().toString().padStart(2, '0');
+	const dateNext = (weddingDate.getDate() + 1).toString().padStart(2, '0');
+	if (!positionTitleClass) {
+		positionTitleClass = 'bottom-1/4';
+	}
 	return (
 		<div
 			id="section-header"
@@ -52,7 +58,7 @@ export default function Header({
 					/>
 				</picture>
 			</div>
-			<div className="text-center absolute bottom-1/4 w-full z-10">
+			<div className={`text-center absolute ${positionTitleClass} w-full z-10`}>
 				<h1
 					className={`${alexBrushFont.className} text-[40px] sm:text-[42px] lg:text-8xl font-normal drop-shadow-lg flex justify-center items-center text-white`}
 				>
@@ -83,7 +89,7 @@ export default function Header({
 					className={`${nunitoSansFont.className} text-base lg:text-2xl tracking-[5px] uppercase text-white`}
 				>
 					<AnimationOnScroll animateIn="animate__fadeInUp" initiallyVisible={true} duration={0.8}>
-						<span className="wedding-date-d">{date}/{date+1}</span>
+						<span className="wedding-date-d">{date}/{dateNext}</span>
 						<span>-</span>
 						<span className="wedding-date-m">{month}</span>
 						<span>-</span>
