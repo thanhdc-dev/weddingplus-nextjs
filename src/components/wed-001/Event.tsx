@@ -44,7 +44,7 @@ export default function Events({ items }: Readonly<EventProps>) {
 	const owlOptions = {
 		responsive: responsiveOption,
 		autoplay: true,
-		autoplayTimeout: 3000,
+		autoplayTimeout: 5000,
 		loop: true,
 		dots: true,
 		margin: 30,
